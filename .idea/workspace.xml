@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c45fe67-6b7a-498d-8a8e-f4e71d23b5a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Schule/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Schule/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Schule/src/util/MathUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Schule/src/util/MathUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/methods/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MathUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MathUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "Code-quality-improvements"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
