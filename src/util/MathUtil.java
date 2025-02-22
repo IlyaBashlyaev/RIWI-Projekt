@@ -1,7 +1,7 @@
-package src.methods;
-public class Methods {
+package src.util;
+public class MathUtil {
     // Die Berechnung der Summe
-    public static float calcSum(float[] prices) {
+    public float calcSum(float[] prices) {
         float sum = 0f;
         for (float price : prices) {
             sum += price;
@@ -10,7 +10,7 @@ public class Methods {
     }
 
     // Die Berechnung der Mehrwertsteuer
-    public static float calcVAT(float[] prices, boolean defaultVAT) {
+    public float calcVAT(float[] prices, boolean defaultVAT) {
         float sum = 0f,
               VAT = defaultVAT ? 0.19f : 0.07f;
         for (float price : prices) {

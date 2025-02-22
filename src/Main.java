@@ -1,39 +1,41 @@
 package src;
-// import java.io.BufferedReader;
-import java.util.Scanner;
-import src.methods.Methods;
+import src.util.MathUtil;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        // Die Begrüßung
-        System.out.println("Hallo! Das ist ein Rechner-Programm von RIWI.\n");
-
-        int n = 6;
-        while (n > 5) {
-            System.out.print("Geben Sie bitte die Anzahl der Produkte ein: ");
-            n = new Scanner(System.in).nextInt();
-            if (n > 5) System.out.println("Bitte geben Sie maximal \"5\" ein!");
+        //Definieren der Dinge die benötigt werden
+        MathUtil mathUtil = new MathUtil();
+        String[] productNames = new String[5];
+        float[] prices = new float[5];
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            //Eingabe des Nutzers
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Gib den Namen des Produkts " + (i + 1) + " ein sowie deren Preis mit \";\" getrennt:");
+                String[] input = reader.readLine().split(";");
+                productNames[i] = input[0];
+                prices[i] = Float.parseFloat(input[1]);
+            }
+            //Speicherung der Ergebnisse der Util
+            float sum = mathUtil.calcSum(prices);
+            float vat = mathUtil.calcVAT(prices, true); // Standard MwSt.
+            //Infos für den Nutzer
+            System.out.println("Gesamtsumme: " + String.format("%.2f", sum) + " von den Produkten: " + Arrays.toString(productNames));
+            System.out.println("MwSt.: " + String.format("%.2f", vat));
+            System.out.println("Anzahl der Produkte: " + prices.length);
+        } catch (IOException e) {
+            System.out.println("Es gab einen Fehler beim Auslesen der Eingabe.");
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.out.println("Die Zahl existiert nicht.");
+            e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Bitte in diesem Format eingeben: \"name;preis\"");
+            e.printStackTrace();
         }
-
-        String products[] = new String [5];
-        float prices[] = new float [5];
-        System.out.println();
-
-        // Die Eingabe des Benutzers
-        for (int i = 0; i < n; i++) {
-            System.out.print("Geben Sie den Namen und den Preis des Produkts " + (i + 1) + " mit \";\" getrennt ein: ");
-            String data[] = new Scanner(System.in).nextLine().split(";");
-            products[i] = data[0];
-            prices[i] = Float.parseFloat(data[1]);
-        }
-
-        // Das Berechnung der Werte
-        float sum = Methods.calcSum(prices);
-        float VAT = Methods.calcVAT(prices, true); // true = 19% MwSt.
-
-        // Die ausgegebene Information für den Benutzer
-        System.out.println("\nDie Gesamtsumme: " + String.format("%.2f", sum));
-        System.out.println("Der Mehrwertsteuer: " + String.format("%.2f", VAT));
-        System.out.println("Die Anzahl der Produkte: " + prices.length);
     }
 }
