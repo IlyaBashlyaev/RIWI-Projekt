@@ -1,5 +1,5 @@
-package src.calculator;
-public class Calculator {
+package src.util;
+public class CalculatorUtil {
     // Die Berechnung der Summe
     public float calcSum(float[] prices) {
         float sum = 0f;
