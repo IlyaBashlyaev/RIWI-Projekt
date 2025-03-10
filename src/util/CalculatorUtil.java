@@ -10,12 +10,11 @@ public class CalculatorUtil {
     }
 
     // Die Berechnung der Mehrwertsteuer
-    public float calcVAT(float[] prices, boolean defaultVAT) {
-        float sum = 0f,
-              VAT = defaultVAT ? 0.19f : 0.07f;
-        for (float price : prices) {
-            sum += price;
+    public float calcVAT(float[] prices, float[] types) {
+        float sum = 0f;
+        for (int i = 0; i < prices.length; i++) {
+            sum += prices[i] * types[i];
         }
-        return sum * VAT;
+        return sum;
     }
 }

@@ -5,6 +5,8 @@ import java.util.InputMismatchException;
 import java.lang.ArrayIndexOutOfBoundsException;
 import java.lang.NumberFormatException;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // Die Begrüßung
@@ -18,18 +20,21 @@ public class Main {
             n = new Scanner(System.in).nextInt();
             String products[] = new String [n];
             float prices[] = new float [n];
+            float types[] = new float [n];
 
             // Die Eingabe der Produkte
+            System.out.print("\nSie müssen " + n + " Mal den Namen des Produkts, den Preis des Produkts und den Typ (\"true\" für Grundbedarf oder \"false\" für Konsumgut) des Produkts eingeben.\n");
             for (int i = 0; i < n; i++) {
-                System.out.print("\nGeben Sie den Namen und den Preis des Produkts " + (i + 1) + " mit \";\" getrennt ein: ");
+                System.out.print("Geben Sie drei Felder für das Produkt #" + (i + 1) + " mit \";\" getrennt ein: ");
                 String data[] = new Scanner(System.in).nextLine().split(";");
                 products[i] = data[0];
                 prices[i] = Float.parseFloat(data[1]);
+                types[i] = Boolean.parseBoolean(data[2]) ? 0.19f : 0.07f;
             }
 
             // Das Berechnung der Werte
             float sum = calculator.calcSum(prices);
-            float VAT = calculator.calcVAT(prices, true); // true = 19% MwSt.
+            float VAT = calculator.calcVAT(prices, types);
 
             // Die ausgegebene Information für den Benutzer
             System.out.println("\nDie Gesamtsumme: " + String.format("%.2f", sum));
