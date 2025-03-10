@@ -2,10 +2,9 @@ package src;
 import java.util.Scanner;
 import src.util.CalculatorUtil;
 import java.util.InputMismatchException;
+import java.lang.Math;
 import java.lang.ArrayIndexOutOfBoundsException;
 import java.lang.NumberFormatException;
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,7 +27,7 @@ public class Main {
                 System.out.print("Geben Sie drei Felder für das Produkt #" + (i + 1) + " mit \";\" getrennt ein: ");
                 String data[] = new Scanner(System.in).nextLine().split(";");
                 products[i] = data[0];
-                prices[i] = Float.parseFloat(data[1]);
+                prices[i] = Math.abs(Float.parseFloat(data[1]));
                 types[i] = Boolean.parseBoolean(data[2]) ? 0.19f : 0.07f;
             }
 
