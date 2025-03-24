@@ -20,18 +20,30 @@ public class Main {
             String products[] = new String [n];
             float prices[] = new float [n];
             float types[] = new float [n];
+            char type;
 
             // Die Eingabe der Produkte
-            System.out.print("\nSie müssen " + n + " Mal den Namen des Produkts, den Preis des Produkts und den Typ (\"true\" für Grundbedarf oder \"false\" für Konsumgut) des Produkts eingeben.\n");
+            System.out.println("\nSie müssen " + n + " Mal den Namen des Produkts, den Preis des Produkts und den Typ (\"g\" für Grundbedarf oder \"k\" für Konsumgut) des Produkts eingeben.\n");
             for (int i = 0; i < n; i++) {
                 System.out.print("Geben Sie drei Felder für das Produkt #" + (i + 1) + " mit \";\" getrennt ein: ");
                 String data[] = new Scanner(System.in).nextLine().split(";");
-                products[i] = data[0];
-                prices[i] = Math.abs(Float.parseFloat(data[1]));
-                types[i] = Boolean.parseBoolean(data[2]) ? 0.19f : 0.07f;
+                type = data[2].charAt(0);
+
+                // Die Speicherung der Daten aus der Eingabe
+                if (type == 'g' || type == 'k') {
+                    products[i] = data[0];
+                    prices[i] = Math.abs(Float.parseFloat(data[1]));
+                    types[i] = type == 'g' ? 0.07f : 0.19f;
+                }
+
+                // Die Ausgabe des Fehlers mit dem Typ
+                else {
+                    System.out.println("Bitte geben Sie nur \"g\" oder \"k\" für den Typ des Produkts!");
+                    i--;
+                }
             }
 
-            // Das Berechnung der Werte
+            // Die Berechnung der Werte
             float sum = calculator.calcSum(prices);
             float VAT = calculator.calcVAT(prices, types);
 
