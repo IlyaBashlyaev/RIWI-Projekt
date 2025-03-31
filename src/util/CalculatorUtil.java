@@ -13,7 +13,7 @@ public class CalculatorUtil {
     public float calcVAT(float[] prices, float[] types) {
         float sum = 0f;
         for (int i = 0; i < prices.length; i++) {
-            sum += prices[i] * types[i];
+            sum += prices[i] / (1 + types[i]) * types[i];
         }
         return sum;
     }

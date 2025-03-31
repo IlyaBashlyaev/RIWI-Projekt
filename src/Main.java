@@ -22,7 +22,11 @@ public class Main {
             char type;
 
             // Die Eingabe der Produkte
-            System.out.println("\nSie müssen " + n + " Mal den Namen des Produkts, den Preis des Produkts (mit \".\" als Komma) und den Typ (\"g\" für Grundbedarf oder \"k\" für Konsumgut) des Produkts mit \";\" getrennt eingeben.\n");
+            System.out.println("\nSie müssen " + n + " Mal drei Felder mit \";\" getrennt eingeben:");
+            System.out.println("- Der Name des Produkts");
+            System.out.println("- Der Preis des Produkts (Bruttopreis mit \".\" als Komma)");
+            System.out.println("- Der Typ des Produkts (\"g\" für Grundbedarf mit 7 % oder \"k\" für Konsumgut mit 19 %)\n");
+
             for (int i = 0; i < n; i++) {
                 System.out.print("Geben Sie drei Felder für das Produkt #" + (i + 1) + " ein: ");
                 String data[] = new Scanner(System.in).nextLine().split(";");
