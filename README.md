@@ -24,7 +24,7 @@ Die grafische Benutzeroberfläche des RIWI Rechners wurde mit Java Swing impleme
 4. **Ergebnis-Panel**: Zeigt die Gesamtsumme, die enthaltene Mehrwertsteuer und die Anzahl der Produkte an.
 5. **Button-Panel**: Enthält Schaltflächen zum Berechnen und Zurücksetzen des Formulars.
 
-Die GUI-Klasse `RiwiCalculatorGUI` nutzt ein responsives Layout, das sich an die Größe des Fensters anpasst. Für jedes Produkt wird ein separates Panel mit Eingabefeldern für Name, Preis und MwSt-Satz erstellt.
+Die Klasse `App` nutzt ein responsives Layout, das sich an die Größe des Fensters anpasst. Für jedes Produkt wird ein separates Panel mit Eingabefeldern für Name, Preis und MwSt-Satz erstellt.
 
 ## Bedienungsanleitung
 
@@ -64,17 +64,17 @@ Für jedes Produkt:
 ### Kompilieren und Ausführen
 ```bash
 # Kompilieren
-javac src/RiwiCalculatorGUI.java
+javac src/Main.java
 
 # Ausführen
-java src.RiwiCalculatorGUI
+java src.Main
 ```
 
 ### Projektstruktur
 ```
 RIWI-Projekt/
 ├── src/
-│   ├── RiwiCalculatorGUI.java  # Hauptklasse mit GUI-Implementierung
+│   ├── Main.java               # Hauptklasse
 │   └── util/
 │       └── CalculatorUtil.java # Berechnungslogik-Implementierung
 └── README.md                   # Diese Datei
@@ -106,7 +106,7 @@ The graphical user interface of the RIWI Calculator is implemented using Java Sw
 4. **Results Panel**: Shows the total sum, the included VAT, and the number of products.
 5. **Button Panel**: Contains buttons for calculating and resetting the form.
 
-The GUI class `RiwiCalculatorGUI` uses a responsive layout that adapts to the size of the window. For each product, a separate panel with input fields for name, price, and VAT rate is created.
+The class `Main` uses a responsive layout that adapts to the size of the window. For each product, a separate panel with input fields for name, price, and VAT rate is created.
 
 ## User Guide
 
@@ -146,17 +146,17 @@ For each product:
 ### Compile and Run
 ```bash
 # Compile
-javac src/RiwiCalculatorGUI.java
+javac src/Main.java
 
 # Run
-java src.RiwiCalculatorGUI
+java src.Main
 ```
 
 ### Project Structure
 ```
 RIWI-Projekt/
 ├── src/
-│   ├── RiwiCalculatorGUI.java  # Main class with GUI implementation
+│   ├── Main.java               # Main class
 │   └── util/
 │       └── CalculatorUtil.java # Calculation logic implementation
 └── README.md                   # This file
