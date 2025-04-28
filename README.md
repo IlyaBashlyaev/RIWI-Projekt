@@ -1,6 +1,6 @@
 # RIWI Rechner
 
-*[English version below](#english-version)*
+Der Rechner der Produkten für den Kunde "RIWI". Das ist ein Lernprojekt im Fach "STD" im ersten Lehrjahr der Ausbildung zum "Fachinformatiker Anwendungsentwicklung".
 
 ## Projektübersicht
 
@@ -79,91 +79,3 @@ RIWI-Projekt/
 │       └── CalculatorUtil.java # Berechnungslogik-Implementierung
 └── README.md                   # Diese Datei
 ```
-
----
-
-# English Version
-
-## Project Overview
-
-The RIWI Calculator is a Java-based application designed to perform calculations for products with different value-added tax (VAT) rates. The application allows the user to enter any number of products, set their price, and choose between basic necessity and consumer goods, which results in different VAT rates.
-
-### Features
-
-- Dynamic entry of any number of products
-- Distinction between basic necessity goods (7% VAT) and consumer goods (19% VAT)
-- Calculation of the total sum and the included VAT
-- User-friendly graphical interface in German
-- Validation of all inputs with helpful error messages
-
-## GUI Implementation Details
-
-The graphical user interface of the RIWI Calculator is implemented using Java Swing and consists of the following main components:
-
-1. **Welcome Panel**: Contains a welcome message for the user.
-2. **Input Panel**: Here the user enters the number of products.
-3. **Product Panel**: After entering the number of products, input fields for each product are dynamically generated here.
-4. **Results Panel**: Shows the total sum, the included VAT, and the number of products.
-5. **Button Panel**: Contains buttons for calculating and resetting the form.
-
-The class `Main` uses a responsive layout that adapts to the size of the window. For each product, a separate panel with input fields for name, price, and VAT rate is created.
-
-## User Guide
-
-### Step 1: Set the Number of Products
-1. Enter the desired number of products in the field "Geben Sie die Anzahl der Produkte ein" (Enter the number of products).
-2. Click on "Bestätigen" (Confirm) to generate the product input fields.
-
-### Step 2: Enter Product Details
-For each product:
-1. Enter the name of the product.
-2. Enter the price of the product (using "." as the decimal separator).
-3. Select the product type:
-   - "Grundbedarf (7%)" (Basic need) for products with reduced tax rate
-   - "Konsumgut (19%)" (Consumer good) for products with standard tax rate
-
-### Step 3: Perform Calculation
-1. After entering all product details, click on "Berechnen" (Calculate).
-2. The results (total sum, VAT, and number of products) are displayed in the results panel.
-
-### Additional Functions
-- **Reset**: Click on "Zurücksetzen" (Reset) to clear all inputs and start over.
-- **Validation**: All inputs are checked. Error messages are displayed for invalid inputs.
-
-## Technical Details and Requirements
-
-### System Requirements
-- Java Runtime Environment (JRE) 8 or higher
-- At least 256 MB RAM
-- Screen resolution of at least 800×600 pixels
-
-### Implementation Details
-- The application uses Java Swing for the GUI components
-- The business logic for calculations is implemented in `CalculatorUtil`
-- Localization: The application is localized in German (number formats, currency, etc.)
-- Input validation: All user inputs are validated to ensure correct calculations
-
-### Compile and Run
-```bash
-# Compile
-javac src/Main.java
-
-# Run
-java src.Main
-```
-
-### Project Structure
-```
-RIWI-Projekt/
-├── src/
-│   ├── Main.java               # Main class
-│   └── util/
-│       └── CalculatorUtil.java # Calculation logic implementation
-└── README.md                   # This file
-```
-
-# RIWI-Projekt
-
-Der Rechner der Produkten für den Kunde "RIWI".
-
-Das ist ein Lernprojekt im Fach "STD" im ersten Lehrjahr der Ausbildung zum "Fachinformatiker Anwendungsentwicklung"
