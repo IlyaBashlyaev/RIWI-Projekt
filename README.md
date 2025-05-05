@@ -6,8 +6,14 @@ Der Rechner der Produkten für den Kunde "RIWI". Das ist ein Lernprojekt im Fach
 Dieses Java-Programm ermöglicht die Berechnung von Produktpreisen und Mehrwertsteuer. Es können mehrere Produkte eingegeben werden, für die jeweils der Gesamtpreis und die enthaltene Mehrwertsteuer berechnet werden. Das Programm unterscheidet zwischen zwei Mehrwertsteuerwerte. Der erste Wert ist 7% für Produkte des Grundbedarfs und der zweite Wert ist 19% für Konsumgüter.
 
 ## Die Projektstruktur
-- `src/Main.java`: Das Hauptprogramm mit mit der "Main"-Klasse zur Eingabe der Produktdaten und Ausgabe der Preise.
-- `src/util/CalculatorUtil.java`: Die Hilfsklasse für die Berechnung der Summen und Mehrwertsteuerbeträge.
+```
+ RIWI-Projekt/
+ ├── src/
+ │   ├── Main.java               # Das Hauptprogramm mit mit der "Main"-Klasse
+ │   └── utils/
+ │       └── CalculatorUtil.java # Die Hilfsklasse für die Berechnung
+ └── README.md                   # Diese Datei
+ ```
 
 ## Die Benutzung
 1. Starten Sie das Programm und geben Sie die Anzahl der Produkte ein, die Sie berechnen möchten.
@@ -17,7 +23,7 @@ Dieses Java-Programm ermöglicht die Berechnung von Produktpreisen und Mehrwerts
    - Der Typ des Produkts:
      - 'g' für Grundbedarf (7% MwSt.)
      - 'k' für Konsumgut (19% MwSt.)
-Das Beispiel einer Eingabe: `Brot;2.50;g`
+Das Beispiel einer Eingabe: `Brot;2.5;g`
 
 ## Die Fehlerbehandlung
 Das Programm erkennt folgende Fehlereingaben:
@@ -31,3 +37,13 @@ Nach erfolgreicher Eingabe aller Produkte zeigt das Programm:
 - Die Gesamtsumme aller Produkte
 - Den Gesamtbetrag der enthaltenen Mehrwertsteuer
 - Die Anzahl der eingegebenen Produkte
+
+## Die Kompilierung und Ausführung
+ ```bash
+ # Kompilierung
+ javac src/RiwiCalculatorGUI.java
+ 
+ # Ausführung
+ java src.RiwiCalculatorGUI
+ java src.RiwiCalculatorGUI.java
+ ```
