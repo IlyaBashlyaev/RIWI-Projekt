@@ -11,8 +11,7 @@ public class CalculatorUtil {
      */
     public static float calcSum(HashMap<Integer, Float> prices) {
         float sum = 0f;
-        for (Map.Entry<Integer, Float> price : prices.entrySet())
-            sum += price.getValue();
+        for (Map.Entry<Integer, Float> price : prices.entrySet()) sum += price.getValue();
         return sum;
     }
 
@@ -24,8 +23,12 @@ public class CalculatorUtil {
      */
     public static float calcVAT(HashMap<Integer, Float> prices, HashMap<Integer, Float> types) {
         float VAT = 0f;
-        for (int i = 0; i < prices.size(); i++)
-            VAT += prices.get(i) / (1 + types.get(i)) * types.get(i);
+        int key;
+
+        for (Map.Entry<Integer, Float> price : prices.entrySet()) {
+            key = price.getKey();
+            VAT += price.getValue() / (1 + types.get(key)) * types.get(key);
+        }
         return VAT;
     }
 }
